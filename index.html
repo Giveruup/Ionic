@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ionic</title>
+    <link rel="icon" href="img/icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/media.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+
+<body>
+
+    <svg style="display: none">
+        <symbol id="twitter" viewBox="0 0 16 13">
+            <g>
+                <path
+                    d="M15.375 2.42188C14.8225 2.66618 14.2368 2.82726 13.637 2.89988C14.27 2.52191 14.7438 1.92654 14.97 1.22488C14.385 1.57188 13.738 1.82488 13.048 1.95888C12.5928 1.47046 11.9887 1.14632 11.3301 1.03696C10.6714 0.927603 9.99506 1.03916 9.4064 1.35426C8.81774 1.66936 8.34983 2.17031 8.07555 2.77906C7.80128 3.38781 7.73604 4.07019 7.89 4.71988C6.6862 4.66003 5.50853 4.34705 4.43385 3.80135C3.35917 3.25565 2.41161 2.4895 1.653 1.55288C1.26516 2.21988 1.14647 3.00974 1.32116 3.76126C1.49585 4.51279 1.95074 5.16933 2.593 5.59688C2.093 5.58388 1.625 5.44688 1.219 5.21888V5.25588C1.21876 5.95498 1.46044 6.63263 1.903 7.17381C2.34557 7.71499 2.96177 8.08635 3.64701 8.22488C3.38719 8.29529 3.11919 8.33093 2.85 8.33088C2.656 8.33088 2.466 8.31188 2.281 8.27488C2.47428 8.8767 2.85093 9.40301 3.35821 9.78011C3.8655 10.1572 4.47802 10.3662 5.11 10.3779C4.48244 10.8712 3.76366 11.2359 2.99489 11.4509C2.22612 11.6659 1.42246 11.7271 0.630005 11.6309C2.00695 12.5271 3.61511 13.0028 5.258 12.9999C10.83 12.9999 13.874 8.38388 13.874 4.38088C13.874 4.24988 13.871 4.11888 13.864 3.99088C14.4566 3.56144 14.968 3.02979 15.374 2.42088L15.375 2.42188Z" />
+            </g>
+        </symbol>
+        <symbol id="github" viewBox="0 0 16 16">
+            <g>
+                <path
+                    d="M7.99997 1C6.12038 1.02635 4.32796 1.79701 3.01573 3.14297C1.70351 4.48894 0.978606 6.30035 0.999971 8.18C0.999971 11.35 2.99997 14.04 5.78997 14.98C5.82997 15 5.86997 15 5.90997 15C6.16997 15 6.26997 14.8 6.26997 14.64L6.25997 13.42C5.98997 13.48 5.75997 13.51 5.54997 13.51C4.19997 13.51 3.89997 12.46 3.89997 12.46C3.57997 11.63 3.11997 11.41 3.11997 11.41C2.50997 10.98 3.11997 10.97 3.15997 10.97C3.85997 11.03 4.23997 11.71 4.23997 11.71C4.58997 12.32 5.05997 12.5 5.46997 12.5C5.79997 12.5 6.09997 12.4 6.26997 12.3C6.33997 11.85 6.51997 11.53 6.71997 11.35C5.16997 11.17 3.52997 10.55 3.52997 7.8C3.52997 7.02 3.79997 6.38 4.24997 5.88C4.17997 5.7 3.93997 4.97 4.31997 3.98C4.31997 3.98 4.36997 3.96 4.46997 3.96C4.72997 3.96 5.29997 4.06 6.23997 4.72C7.38825 4.40118 8.60169 4.40118 9.74997 4.72C10.69 4.06 11.27 3.96 11.52 3.96C11.62 3.96 11.68 3.98 11.68 3.98C12.06 4.97 11.82 5.7 11.74 5.88C12.19 6.38 12.46 7.02 12.46 7.8C12.46 10.56 10.82 11.17 9.25997 11.34C9.51997 11.57 9.73997 12 9.73997 12.67V14.64C9.73997 14.81 9.82997 15 10.09 15C10.1302 15.0007 10.1704 14.9973 10.21 14.99C11.6187 14.4959 12.8377 13.5738 13.6966 12.3528C14.5554 11.1318 15.0111 9.6728 15 8.18C15.0213 6.30035 14.2964 4.48894 12.9842 3.14297C11.672 1.79701 9.87956 1.02635 7.99997 1Z" />
+            </g>
+        </symbol>
+        <symbol id="facebook" viewBox="0 0 16 16">
+            <g>
+                <path
+                    d="M13.34 2H2.66C2.3 2 2 2.3 2 2.66V13.34C2 13.7 2.3 14 2.66 14H8V9.25H6.57V7.5H8V6.2C8 4.66 9.07 3.81 10.46 3.81C11.12 3.81 11.83 3.86 12 3.88V5.5H10.9C10.14 5.5 10 5.86 10 6.38V7.5H11.8L11.56 9.25H10V14H13.34C13.7 14 14 13.7 14 13.34V2.66C14 2.3 13.7 2 13.34 2Z" />
+            </g>
+        </symbol>
+    </svg>
+
+    <header class="header" id="header">
+        <div class="container">
+            <menu class="header__menu">
+                <a href="#" class="logo__link" data-scroll="#header__inner"><img src="img/logo.svg" alt="Ionic"
+                        class="logo"></a>
+                <ul class="nav" id="nav">
+                    <li class="nav__item"><a href="#" class="nav__link" data-scroll="#platform">Platform</a></li>
+                    <li class="nav__item"><a href="#" class="nav__link" data-scroll="#approach">Solutions</a></li>
+                    <li class="nav__item"><a href="#" class="nav__link" data-scroll="#resources">Resources</a></li>
+                    <li class="nav__item"><a href="#" class="nav__link" data-scroll="#developers">Developers</a></li>
+                    <li class="nav__item"><a href="#" class="nav__link" data-scroll="#company">Company</a></li>
+                    <li class="nav__item"><a href="#" class="nav__link" data-scroll="#demo">Pricing</a></li>
+                    <li class="login" id="logIn">
+                        <button class="signin__btn">Sign in</button>
+                        <button class="btn">Start Free</button>
+                    </li>
+                </ul>
+
+                <div class="hamburger" id='navToggle'>
+                    <span class="hamburger__line"></span>
+                    <span class="hamburger__line"></span>
+                    <span class="hamburger__line"></span>
+                </div>
+            </menu>
+        </div>
+        <!--/container-->
+    </header>
+
+    <section class="header__inner" id="header__inner">
+        <div class="container">
+            <div class="header__text">
+                <h1 class="header__title">A better way to build modern apps at scale.</h1>
+                <p class="header__description">Our suite of developer-friendly products helps you build, secure, and
+                    deliver enterprise-grade apps on any platform—with
+                    support from the Ionic team every step of the way.</p>
+                <div class="header__btns">
+                    <button class="btn">Get Started</button>
+                    <button class="header__btn">Talk to sales</button>
+                </div>
+            </div>
+            <img src="img/header__lines.svg" alt="" class="header__lines">
+        </div>
+        <!--/container-->
+    </section>
+    <!--/header__inner-->
+
+    <section class="platform" id="platform">
+        <div class="container">
+            <div class="content">
+                <div class="platform__text">
+                    <h3 class="section__title">Seamless cross-platform mobile development.</h3>
+                    <p class="section__description">Let’s be honest. When it comes to mobile app experiences, the bar
+                        has
+                        been set high. In today’s world, people expect
+                        seamless, secure, lightning-fast apps that are fine-tuned to their particular needs. If you
+                        can’t
+                        deliver that kind of
+                        mobile app experience, you can’t expect to build out your business.</p>
+                    <p class="section__description">For enterprise developers aiming to deliver a seamless digital
+                        experience that follows them wherever they are, Ionic is
+                        here to help. Our powerful tools and services make it easy to deliver stunning mobile
+                        experiences
+                        across iOS, Android,
+                        and the Web—all with a single codebase that works everywhere. Move fast, spend less, create
+                        more,
+                        and build better.</p>
+                    <a href="#" class="section__link">See what Ionic can do for you</a>
+                </div>
+                <img src="img/platform.svg" alt="" class="platform__img">
+            </div>
+            <!--/content-->
+            <ul class="platform__list">
+                <li class="platform__item">
+                    <img src="img/native-icon.svg" alt="" class="list__icon">
+                    <h4 class="list__title">Truly native</h4>
+                    <p class="list__description">Access the full Native SDKs on each platform, and powerful pre-built
+                        solutions for authentication and secure storage.</p>
+                </li>
+                <li class="platform__item">
+                    <img src="img/cross-platform-icon.svg" alt="" class="list__icon">
+                    <h4 class="list__title">Truly cross-platform</h4>
+                    <p class="list__description">Slash your development time and costs with a platform that lets you
+                        build once and deploy anywhere.</p>
+                </li>
+                <li class="platform__item">
+                    <img src="img/web-icon.svg" alt="" class="list__icon">
+                    <h4 class="list__title">Powered by the Web</h4>
+                    <p class="list__description">If you know HTML, CSS, and JavaScript, you already know how to build
+                        stunning mobile apps with Ionic.</p>
+                </li>
+            </ul>
+        </div>
+        <!--/container-->
+    </section>
+    <!--/platform-->
+
+    <section class="developers" id="developers">
+        <div class="container">
+            <ul class="dev__list">
+                <li class="dev__item"><img src="img/h&r.svg" alt="" class="dev__icon"></li>
+                <li class="dev__item"><img src="img/burger-king.svg" alt="" class="dev__icon"></li>
+                <li class="dev__item"><img src="img/ussa.svg" alt="" class="dev__icon"></li>
+                <li class="dev__item"><img src="img/cnbc.svg" alt="" class="dev__icon"></li>
+                <li class="dev__item"><img src="img/home-depot.svg" alt="" class="dev__icon"></li>
+                <li class="dev__item"><img src="img/amtrak.svg" alt="" class="dev__icon"></li>
+                <li class="dev__item"><img src="img/ge.svg" alt="" class="dev__icon"></li>
+            </ul>
+        </div>
+        <!--/container-->
+    </section>
+    <!--/developers-->
+
+    <section class="approach" id="approach">
+        <div class="container">
+            <div class="approach__text">
+                <h3 class="section__title">The Ionic approach.</h3>
+                <p class="section__description">Ionic’s full-service platform allows businesses to accelerate web-based
+                    app development without having to bring in
+                    outside talent.</p>
+            </div>
+            <ul class="approach__list">
+                <li class="approach__item">
+                    <img src="img/build-icon.svg" alt="" class="approach__icon">
+                    <h4 class="list__title">Build</h4>
+                    <p class="list__description">Leverage the power of the web to build and develop better critical apps
+                        faster with your existing web talent.</p>
+                </li>
+                <li class="approach__item">
+                    <img src="img/secure-icon.svg" alt="" class="approach__icon">
+                    <h4 class="list__title">Secure</h4>
+                    <p class="list__description">Enjoy open source benefits with the security and peace of mind from
+                        enterprise grade support and reliability.</p>
+                </li>
+                <li class="approach__item">
+                    <img src="img/deliver-icon.svg" alt="" class="approach__icon">
+                    <h4 class="list__title">Deliver</h4>
+                    <p class="list__description">Publish your apps with ease, deliver them continuously, and deploy live
+                        updates in minutes.</p>
+                </li>
+            </ul>
+        </div>
+        <!--/container-->
+    </section>
+    <!--/approach-->
+
+    <section class="action">
+        <div class="container">
+            <div class="content">
+                <div class="action__text">
+                    <h3 class="section__title">Ionic in action.</h3>
+                    <p class="section__descrption">The app development industry is changing, which is why we make sure
+                        our clients are ready to change with it. A
+                        world-class app is the result of world-class products and services. See how Ionic has helped
+                        countless businesses, big
+                        and small, deliver award-winning, mission-critical apps.</p>
+                    <ul class="action__text--list">
+                        <li class="action__text--item"><img src="img/action-amtrak-icon.svg" alt=""
+                                class="action__text--icon"></li>
+                        <li class="action__text--item"><img src="img/action-heart-icon.svg" alt=""
+                                class="action__text--icon"></li>
+                        <li class="action__text--item"><img src="img/action-ea-icon.svg" alt=""
+                                class="action__text--icon"></li>
+                        <li class="action__text--item"><img src="img/action-nhs-icon.svg" alt=""
+                                class="action__text--icon"></li>
+                    </ul>
+                </div>
+                <div class="action__card">
+                    <img src="img/action-card-icon.svg" alt="" class="action__card--icon">
+                    <p class="action__card--description">Amtrak delivers a cutting-edge mobile experience to riders,
+                        while accelerating development timelines, reducing risk, and
+                        improving operational agility.</p>
+                    <button class="action__card--btn">See all of our Case Studies</button>
+                </div>
+            </div>
+            <!--/content-->
+        </div>
+        <!--/cotainer-->
+    </section>
+    <!--/action-->
+
+    <section class="facts">
+        <div class="container">
+            <div class="content">
+                <img src="img/facts__img.png" alt="" class="facts__img">
+                <div class="facts__text">
+                    <h4 class="facts__title">Get the facts you need to make the right decision. <span>We wrote a guide
+                            on everything you need to know.</span></h4>
+                    <a href="#" class="section__link">Read our free eBook</a>
+                </div>
+            </div>
+        </div>
+        <!--/container-->
+    </section>
+    <!--/facts-->
+
+    <section class="resources" id="resources">
+        <div class="container">
+            <div class="resources__text">
+                <h4 class="section__title">A deep dive into the Ionic stack.</h4>
+                <p class="section__description">Our Articles, Webinars, and Case Studies give you the education and
+                    insights you need to succeed with Ionic.</p>
+                <a href="#" class="section__link">Visit our Resource Center</a>
+            </div>
+            <ul class="resources__list">
+                <li class="resources__item">
+                    <img src="img/webinars-icon.svg" alt="" class="resources__icon">
+                    <h4 class="resources__item--title">Webinars</h4>
+                    <p class="resources__item--description">Live and recorded tech talks, product demos, and deep dives
+                        with industry experts.</p>
+                </li>
+                <li class="resources__item">
+                    <img src="img/articles-icon.svg" alt="" class="resources__icon">
+                    <h4 class="resources__item--title">Articles</h4>
+                    <p class="resources__item--description">Timely perspectives on industry news, product updates, and
+                        competitive comparisons.</p>
+                </li>
+                <li class="resources__item">
+                    <img src="img/case-studies-icon.svg" alt="" class="resources__icon">
+                    <h4 class="resources__item--title">Case Studies</h4>
+                    <p class="resources__item--description">Real customers, in their own words, on why they chose Ionic
+                        and what it’s meant for them.</p>
+                </li>
+                <li class="resources__item">
+                    <img src="img/videos-icon.svg" alt="" class="resources__icon">
+                    <h4 class="resources__item--title">Videos</h4>
+                    <p class="resources__item--description">Watch recorded demos, conference talks, deep dive trainings
+                        and more.</p>
+                </li>
+            </ul>
+        </div>
+        <!--/container-->
+    </section>
+    <!--/resources-->
+
+    <section class="demo" id="demo">
+        <div class="demo__text">
+            <h3 class="demo__title">Get up and running with Ionic quickly.</h3>
+        </div>
+        <div class="demo__btns">
+            <button class="btn">Get a free demo</button>
+            <button class="header__btn">Talk to sales</button>
+        </div>
+    </section>
+    <!--/demo-->
+
+    <section class="links" id="company">
+        <div class="container">
+            <div class="links__content">
+                <a href="#" class="logo__link"><img src="img/logo.svg" alt="Ionic" class="logo"></a>
+                <ul class="links__list">
+                    <li class="links__title">The Platform</li>
+                    <li class="links__item"><a href="#" class="links__link">Overview</a></li>
+                    <li class="links__item"><a href="#" class="links__link">Build</a></li>
+                    <li class="links__item"><a href="#" class="links__link">Secure</a></li>
+                    <li class="links__item"><a href="#" class="links__link">Deliver</a></li>
+                    <li class="links__item"><a href="#" class="links__link">Why Ionic?</a></li>
+                </ul>
+                <ul class="links__list">
+                    <li class="links__title">Products</li>
+                    <li class="links__item"><a href="#" class="links__link">Framework</a></li>
+                    <li class="links__item"><a href="#" class="links__link">Capacitor</a></li>
+                    <li class="links__item"><a href="#" class="links__link">Appflow</a></li>
+                    <li class="links__item"><a href="#" class="links__link">Identity Vault</a></li>
+                    <li class="links__item"><a href="#" class="links__link">Secure Storage</a></li>
+                    <li class="links__item"><a href="#" class="links__link">Auth Connect</a></li>
+                </ul>
+                <ul class="links__list">
+                    <li class="links__title">Resources</li>
+                    <li class="links__item"><a href="#" class="links__link">Resource Center</a></li>
+                    <li class="links__item"><a href="#" class="links__link">Blog</a></li>
+                    <li class="links__item"><a href="#" class="links__link">Articles</a></li>
+                    <li class="links__item"><a href="#" class="links__link">Webinars</a></li>
+                    <li class="links__item"><a href="#" class="links__link">Case Studies</a></li>
+                    <li class="links__item"><a href="#" class="links__link">Videos</a></li>
+                </ul>
+                <ul class="links__list">
+                    <li class="links__title">Company</li>
+                    <li class="links__item"><a href="#" class="links__link">About us</a></li>
+                    <li class="links__item"><a href="#" class="links__link">Customers</a></li>
+                    <li class="links__item"><a href="#" class="links__link">Contact</a></li>
+                    <li class="links__item"><a href="#" class="links__link">Careers</a></li>
+                    <li class="links__item"><a href="#" class="links__link">Privacy</a></li>
+                </ul>
+                <ul class="links__list">
+                    <li class="links__title">Support</li>
+                    <li class="links__item"><a href="#" class="links__link">Help Center</a></li>
+                    <li class="links__item"><a href="#" class="links__link">Partners</a></li>
+                    <li class="links__item"><a href="#" class="links__link">Advisory</a></li>
+                    <li class="links__item"><a href="#" class="links__link">Enterprise Guide</a></li>
+                </ul>
+            </div>
+        </div>
+        <!--/container-->
+    </section>
+    <!--/links-->
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <ul class="copyright__list">
+                    <li class="copyright__item"><a href="#" class="copyright__link">Copyright © 2021 Ionic</a></li>
+                    <li class="copyright__item"><a href="#" class="copyright__link">Terms</a></li>
+                    <li class="copyright__item"><a href="#" class="copyright__link">Privacy</a></li>
+                </ul>
+                <ul class="socials__list">
+                    <li class="socials__item">
+                        <a href="#" class="socials__link" target="_blank">
+                            <svg class="social__icon">
+                                <use xlink:href="#twitter"></use>
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="socials__item">
+                        <a href="#" class="socials__link" target="_blank">
+                            <svg class="social__icon">
+                                <use xlink:href="#github"></use>
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="socials__item">
+                        <a href="#" class="socials__link" target="_blank">
+                            <svg class="social__icon">
+                                <use xlink:href="#facebook"></use>
+                            </svg>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!--/container-->
+    </footer>
+    <!--/footer-->
+
+    <script src="main.js"></script>
+
+</body>
+
+</html>
