@@ -30,6 +30,7 @@ $(function () {
         let elementOffset = $(elementID).offset().top;
 
         nav.removeClass('show');
+        navToggle.removeClass('active');
 
         $('html, body').animate({
             scrollTop: elementOffset - 120 //смещение вверх
